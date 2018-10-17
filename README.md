@@ -1,6 +1,9 @@
 # paste-direct
 Play your game !
 
+<br>
+<br>
+
 ![Image](https://github.com/SudevKiyada/paste-direct/blob/master/git.png)
 
 <a href="http://bit.ly/SketchRunnerWebsite">
