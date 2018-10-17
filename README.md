@@ -13,7 +13,7 @@ Play your game !
 <br>
     
 # How to Download
-1. Just download by clicking [here](https://github.com/SudevKiyada/paste-direct/tree/master/PasteDirect.sketchplugin).
+1. Just download by clicking [here](https://github.com/SudevKiyada/paste-direct/blob/master/PasteDirect.sketchplugin.zip).
 2. Double click the downloaded file.
 3. Start rocking ! 🤘🏻🎸
 
