@@ -12,6 +12,11 @@ Play your game !
 <br>
 <br>
     
+# How to Download
+1. Just download by clicking [here](https://github.com/SudevKiyada/paste-direct/tree/master/PasteDirect.sketchplugin).
+2. Double click the downloaded file.
+3. Start rocking ! 🤘🏻🎸
+
 # Color Operations
 
 A counter is maintained between document colors. Applying commands will change it's position accordingly and by applying first/last document color, counter will be unaffected.
