@@ -14,7 +14,7 @@ Play your game !
     
 # How to Download
 1. Just download by clicking [here](https://github.com/SudevKiyada/paste-direct/raw/master/PasteDirect.sketchplugin.zip).
-2. Double click the downloaded file.
+2. Unzip the downloaded dile and double click on **PasteDirect.sketchplugin**.
 3. Start rocking ! 🤘🏻🎸
 
 # Color Operations
