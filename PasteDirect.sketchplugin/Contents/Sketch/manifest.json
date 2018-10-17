@@ -1,0 +1,76 @@
+{
+  "author" : "",
+  "commands" : [
+    {
+      "script" : "colorDirect.cocoascript",
+      "name" : "Paste Direct",
+      "shortcut" : "command ctrl v",
+      "identifier" : "colorDirect",
+      "handlers" : {
+        "run" : "onRun"
+      },
+    },
+    {
+      "script" : "copyDirect.cocoascript",
+      "name" : "Copy Direct",
+      "shortcut" : "command ctrl x",
+      "identifier" : "copyDirect",
+      "handlers" : {
+        "run" : "onCopyDirect"
+      },
+    },
+    {
+      "script" : "colorDocumentIncrease.cocoascript",
+      "name" : "Increase Document Color",
+      "shortcut" : "command ctrl ↑",
+      "identifier" : "colorDocumentIncrease",
+      "handlers" : {
+        "run" : "onColorDocumentIncrease"
+      },
+    },
+    {
+      "script" : "colorDocumentDecrease.cocoascript",
+      "name" : "Decrease Document Color",
+      "shortcut" : "command ctrl ↓",
+      "identifier" : "colorDocumentDecrease",
+      "handlers" : {
+        "run" : "onColorDocumentDecrease"
+      },
+    },
+    {
+      "script" : "colorDocumentFirst.cocoascript",
+      "name" : "Apply First Document Color",
+      "shortcut" : "command ctrl ←",
+      "identifier" : "colorDocumentFirst",
+      "handlers" : {
+        "run" : "onColorDocumentFirst"
+      },
+    },
+    {
+      "script" : "colorDocumentLast.cocoascript",
+      "name" : "Apply Last Document Color",
+      "shortcut" : "command ctrl →",
+      "identifier" : "colorDocumentLast",
+      "handlers" : {
+        "run" : "onColorDocumentLast"
+      },
+    },
+    {
+      "script" : "colorDocument.cocoascript",
+      "name" : "Current Document Color",
+      "shortcut" : "command ctrl 0",
+      "identifier" : "colorDocument",
+      "handlers" : {
+        "run" : "onColorDocument"
+      },
+    },
+  ],
+  "menu" : {
+    "items" : ["colorDirect","copyDirect","colorDocumentIncrease","colorDocumentDecrease","colorDocumentFirst","colorDocumentLast","colorDocument"]
+  },
+  "identifier" : "com.example.sketch.fad03cb9-9298-4cf4-a4d4-4dc95d396fd3",
+  "version" : "1.0",
+  "description" : "",
+  "authorEmail" : "",
+  "name" : "PasteDirect"
+}

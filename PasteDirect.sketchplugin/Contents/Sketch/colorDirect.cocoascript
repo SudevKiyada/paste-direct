@@ -1,0 +1,88 @@
+var onRun = function(context) {
+
+    //Initialization
+    var sketch = require('sketch');
+
+    var message = context.document;
+
+    var doc = sketch.getSelectedDocument();
+
+    var selection = doc.selectedLayers;
+
+    var pb = NSPasteboard.generalPasteboard();
+
+    var temp = pb.stringForType(NSPasteboardTypeString);
+
+
+
+    //Test if clipboard contains color code
+    var flag = 0;
+
+    var reg_test = /^#[0-9a-f]{6}/i;
+
+    if(reg_test.test(temp))
+        flag = 1;
+
+    reg_test = /^[0-9a-f]{6}/i;
+
+    if(reg_test.test(temp))
+        flag = 1;
+
+
+
+    //Apply specific changes to layers selected
+    if(flag == 1){
+        if(temp.length() == 7){
+
+            var regex = /^#[0-9a-f]{6}/i;
+            
+            if(regex.test(temp)){
+                selection.forEach(layer => layer.style.fills = [""+temp]);
+                message.showMessage(selection.layers.length + " layers repainted ! 😍");
+            }else{
+                message.showMessage("Invalid code ! 🤯 Please try copying again.");
+            }
+
+        }else if(temp.length() == 6){
+
+            var regex = /^[0-9a-f]{6}/i;
+
+            if(regex.test(temp)){
+                selection.forEach(layer => layer.style.fills = ["#"+temp]);
+            }else{
+                message.showMessage("Invalid code ! 🤯 Please try copying again.");
+            }
+
+        }else{
+            message.showMessage("Invalid code ! 🤯 Please try copying again.");
+        }
+
+    }else if(flag == 0){
+        for(var i = 0; i < selection.layers.length; i++){
+                if(selection.layers[i].type == "Text"){
+                var frame = selection.layers[i].frame;
+                var old_x = selection.layers[i].frame.x;
+                var alignment = selection.layers[i].alignment;
+                var new_width = frame.width;
+                var bool_fixed = selection.layers[i].fixedWidth;
+
+                selection.layers[i].text = temp;
+                selection.layers[i].fixedWidth = bool_fixed;
+                selection.layers[i].frame.width = new_width;
+
+                if(alignment == 'left'){
+
+                }
+                else if(alignment == 'center'){
+                    selection.layers[i].frame.x = old_x + (frame.width / 2) - (selection.layers[i].frame.width / 2);
+                }
+                else if(alignment == 'right'){
+                    selection.layers[i].frame.x = old_x + frame.width - (selection.layers[i].frame.width);
+                }
+
+                sketch.UI.message(selection.layers.length + " texts have been replaced 🤩");
+            }
+        }
+    }
+          
+          };

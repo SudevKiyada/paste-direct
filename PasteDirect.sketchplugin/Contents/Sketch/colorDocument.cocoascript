@@ -1,0 +1,49 @@
+var onColorDocument = function(context) {
+
+    var sketch = require('sketch');
+
+    var Settings = require('sketch/settings');
+
+    var ctr = Settings.settingForKey('colorDocument');
+
+    var document = sketch.getSelectedDocument();
+    var page = document.selectedPage;
+    var selection = document.selectedLayers;
+
+    var documentData = context.document.documentData();
+    var assets = documentData.assets();
+    var mutableDocumentColors = assets.colors().mutableCopy();
+    var color = MSColor.alloc().init();
+
+    var first = assets.colors();
+
+	if(first.length == 0){
+    	sketch.UI.message("No document colors !");
+	}
+	else{
+
+        var red = first[ctr].red();
+        var green = first[ctr].green();
+        var blue = first[ctr].blue();
+        var alpha = first[ctr].alpha();
+
+        selection.forEach(function(item){
+            var length = item.style.sketchObject.fills().length;
+
+            if(length > 0){
+                if(item.style.fills[length - 1].fill != "Color"){
+                    item.style.fills[length - 1].fill = "Color";
+                }
+                item.style.sketchObject.fills()[length - 1].color = MSColor.colorWithRed_green_blue_alpha(red, green, blue, alpha);
+            }
+            else if(item.type == 'Text'){
+                var immutableColor = MSImmutableColor.colorWithRed_green_blue_alpha(red, green, blue, alpha);
+                var color = MSColor.alloc().initWithImmutableObject_(immutableColor);
+                item.sketchObject.setTextColor(color);
+            }
+            sketch.UI.message("Color applied ! counter=" + ctr);
+        });
+	}
+
+
+};

@@ -1,0 +1,45 @@
+var onCopyDirect = function(context) {
+
+    //Initialization
+     var sketch = require('sketch');
+
+    var document = sketch.getSelectedDocument();
+
+    var Rectangle = require('sketch/dom').Rectangle;
+
+    var UI = require('sketch/ui');
+
+    var Group = require('sketch/dom').Group;
+
+    var Shape = require('sketch/dom').Shape;
+
+    var Style = require('sketch/dom').Style;
+
+    var page = document.selectedPage;
+
+    var selection = document.selectedLayers;
+
+    var pb = NSPasteboard.generalPasteboard();    
+
+    var lyr = selection.layers[0];
+
+    var clr;
+
+    for(var i = lyr.style.fills.length - 1; i > -1; i--){
+      if(lyr.style.fills[i].enabled){
+        clr = lyr.style.fills[i].color.substr(1,6).toUpperCase();
+        break;
+      }
+    }
+
+    function copy_text(txt){
+        pb = [NSPasteboard generalPasteboard]
+        [pb declareTypes:[NSPasteboardTypeString] owner:nil]
+        [pb setString:txt forType:NSPasteboardTypeString]
+    }
+
+    pb.clearContents();
+    copy_text(clr);
+
+    UI.message("Color code copied !");
+};
