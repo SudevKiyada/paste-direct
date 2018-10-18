@@ -29,6 +29,7 @@ Key | Description
 `⌘ + Ctrl + 	→` | Last Document Color
 `⌘ + Ctrl + 	0` | Apply Current Document Color
 
+<br>
 ![Image](https://github.com/SudevKiyada/paste-direct/blob/master/Img/Doc%20COlor.gif)
 
 <br>
@@ -42,6 +43,7 @@ Pressing `⌘ + Ctrl + 	X` will copy selected layer's color code.
 <br>
 
 Pressing `⌘ + Ctrl + 	V` with color code in clipboard will change the selected layers fill to the clipboard color. And pressing the same keys with text layer selected will enter the clipboard text to the text layer.
+<br>
 ![Image](https://github.com/SudevKiyada/paste-direct/blob/master/Img/Text.gif)
 <br>
 ![Image](https://github.com/SudevKiyada/paste-direct/blob/master/Img/Text%202.gif)
