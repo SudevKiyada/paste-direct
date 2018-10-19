@@ -1,5 +1,5 @@
 # paste-direct
-Play your game !
+Enhance your workflow in Sketch even faster !
 
 <br>
 <br>
